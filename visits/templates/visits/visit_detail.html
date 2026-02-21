@@ -1,0 +1,59 @@
+<!--
+visits/templates/visits/visit_detail.html
+
+Detail page for a single vendor visit.
+Users land here when clicking a calendar event.
+Keep this page readable for technicians during shift.
+-->
+
+{% extends "visits/base.html" %}
+
+{% block content %}
+<h2>{{ visit.vendor.name }} | {{ visit.title }}</h2>
+
+<div style="background:white; padding:16px; border-radius:12px; max-width:1000px;">
+  <p><strong>Status</strong> {{ visit.get_status_display }}</p>
+  <p><strong>Start</strong> {{ visit.start_dt }}</p>
+  <p><strong>End</strong> {{ visit.end_dt }}</p>
+
+  <p><strong>Primary Vendor Contact</strong>
+    {% if visit.contact %}
+      {{ visit.contact.name }}
+      {% if visit.contact.phone %} | {{ visit.contact.phone }}{% endif %}
+      {% if visit.contact.email %} | {{ visit.contact.email }}{% endif %}
+    {% else %}
+      none
+    {% endif %}
+  </p>
+
+  <p><strong>Site Owner</strong>
+    {% if visit.site_owner %}{{ visit.site_owner.username }}{% else %}none{% endif %}
+  </p>
+
+  <p><strong>Equipment</strong></p>
+  <ul>
+    {% for e in visit.equipment.all %}
+      <li>{{ e }}</li>
+    {% empty %}
+      <li>none</li>
+    {% endfor %}
+  </ul>
+
+  <p><strong>Work Scope</strong></p>
+  <pre style="white-space:pre-wrap;">{{ visit.work_scope|default:"" }}</pre>
+
+  <p><strong>References</strong></p>
+  <p>SIM {{ visit.sim_ticket|default:"" }} | Work Order {{ visit.work_order|default:"" }}</p>
+
+  <p><strong>Pre Visit Notes</strong></p>
+  <pre style="white-space:pre-wrap;">{{ visit.pre_visit_notes|default:"" }}</pre>
+
+  <p><strong>Post Visit Handoff</strong></p>
+  <pre style="white-space:pre-wrap;">{{ visit.post_visit_handoff|default:"" }}</pre>
+
+  <div style="display:flex; gap:10px; margin-top:16px;">
+    <a class="btn" href="{% url 'visit_edit' visit.pk %}">Edit</a>
+    <a class="btn" href="{% url 'calendar' %}">Back to Calendar</a>
+  </div>
+</div>
+{% endblock %}
