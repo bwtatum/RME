@@ -1,0 +1,224 @@
+/* ============================= */
+/* FullCalendar Base Styling */
+/* ============================= */
+
+.fc {
+  font-size: 0.95rem;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.fc .fc-col-header-cell-cushion {
+  font-weight: 700;
+}
+
+.fc .fc-daygrid-day-number {
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+
+.fc .fc-event-title,
+.fc .fc-event-time {
+  font-weight: 700;
+}
+
+/* ============================= */
+/* Highlight Today */
+/* ============================= */
+
+.fc .fc-daygrid-day.fc-day-today {
+  background: rgba(99, 102, 241, 0.10) !important;
+}
+
+.dark .fc .fc-daygrid-day.fc-day-today {
+  background: rgba(99, 102, 241, 0.18) !important;
+}
+
+.fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-frame {
+  box-shadow: inset 0 0 0 2px rgba(99, 102, 241, 0.45);
+  border-radius: 14px;
+}
+
+.dark .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-frame {
+  box-shadow: inset 0 0 0 2px rgba(99, 102, 241, 0.55);
+}
+
+/* ============================= */
+/* Grey Out Past Days */
+/* ============================= */
+
+.fc .fc-daygrid-day.fc-day-past {
+  background: rgba(2, 6, 23, 0.03);
+}
+
+.dark .fc .fc-daygrid-day.fc-day-past {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.fc .fc-daygrid-day.fc-day-past .fc-daygrid-day-number,
+.fc .fc-daygrid-day.fc-day-past .fc-event-title,
+.fc .fc-daygrid-day.fc-day-past .fc-event-time {
+  opacity: 0.55;
+}
+
+/* ============================= */
+/* Light / Dark Text Adjustments */
+/* ============================= */
+
+html:not(.dark) .fc {
+  color: rgb(15 23 42);
+}
+
+html:not(.dark) .fc .fc-daygrid-day-number {
+  color: rgb(30 41 59);
+}
+
+.dark .fc {
+  color: rgb(226 232 240);
+}
+
+.dark .fc .fc-daygrid-day-number {
+  color: rgb(203 213 225);
+}
+
+/* Grid border softness */
+
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid td,
+.fc .fc-scrollgrid th {
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+.dark .fc .fc-scrollgrid,
+.dark .fc .fc-scrollgrid td,
+.dark .fc .fc-scrollgrid th {
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+/* ============================= */
+/* FullCalendar Dark Mode Fixes  */
+/* Week / Day / List Views       */
+/* ============================= */
+
+/* Base surface + text */
+.dark .fc {
+  color: rgb(226 232 240);
+}
+
+.dark .fc .fc-timegrid-slot-label,
+.dark .fc .fc-timegrid-axis-cushion,
+.dark .fc .fc-col-header-cell-cushion,
+.dark .fc .fc-daygrid-day-number {
+  color: rgb(203 213 225);
+}
+
+/* Grid background for timeGrid (week/day) */
+.dark .fc .fc-timegrid,
+.dark .fc .fc-timegrid-body,
+.dark .fc .fc-timegrid-slots,
+.dark .fc .fc-scrollgrid {
+  background: rgba(2, 6, 23, 0.35);
+}
+
+/* Column headers and time axis background */
+.dark .fc .fc-col-header,
+.dark .fc .fc-timegrid-axis {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Slot lines and borders */
+.dark .fc .fc-scrollgrid,
+.dark .fc .fc-scrollgrid td,
+.dark .fc .fc-scrollgrid th,
+.dark .fc .fc-timegrid-slot,
+.dark .fc .fc-timegrid-divider,
+.dark .fc .fc-timegrid-col-frame {
+  border-color: rgba(148, 163, 184, 0.18) !important;
+}
+
+/* All day area */
+.dark .fc .fc-timegrid-allday,
+.dark .fc .fc-timegrid-allday-frame {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* The "now" indicator line */
+.dark .fc .fc-timegrid-now-indicator-line {
+  border-color: rgba(99, 102, 241, 0.8) !important;
+}
+
+/* Make past slots less bright but not ugly */
+.dark .fc .fc-day-past {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* List view rows */
+.dark .fc .fc-list {
+  background: transparent;
+}
+
+.dark .fc .fc-list-day-cushion {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgb(226 232 240);
+}
+
+.dark .fc .fc-list-event:hover td {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Buttons in dark mode (toolbar) */
+.dark .fc .fc-button {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: rgb(226 232 240) !important;
+}
+
+.dark .fc .fc-button:hover {
+  background: rgba(255, 255, 255, 0.10) !important;
+}
+
+.dark .fc .fc-button-primary:not(:disabled).fc-button-active,
+.dark .fc .fc-button-primary:not(:disabled):active {
+  background: rgba(99, 102, 241, 0.30) !important;
+  border-color: rgba(99, 102, 241, 0.45) !important;
+}
+
+/* Today highlight still visible in timeGrid */
+.dark .fc .fc-day-today {
+  background: rgba(99, 102, 241, 0.12) !important;
+}
+
+/* ============================= */
+/* Dark mode – soften day headers */
+/* ============================= */
+
+/* Day header row (Sun Mon Tue...) */
+.dark .fc .fc-col-header {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+.dark .fc .fc-col-header-cell {
+  background: transparent !important;
+}
+
+.dark .fc .fc-col-header-cell-cushion {
+  color: rgb(203 213 225) !important;
+  font-weight: 600;
+}
+
+/* Remove that harsh white border line under headers */
+.dark .fc .fc-col-header,
+.dark .fc .fc-col-header th {
+  border-color: rgba(148, 163, 184, 0.18) !important;
+}
+
+.dark .fc .fc-col-header,
+.dark .fc .fc-scrollgrid-section-header td,
+.dark .fc .fc-scrollgrid-section-header th {
+  background: rgba(59, 130, 246, 0.08) !important;
+}
